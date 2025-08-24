@@ -9,7 +9,6 @@ export class YnabService {
   constructor() { }
 
   async getCategories(budgetId: string, token: string): Promise<Category[]> {
-    console.log(token);
     let response = await fetch(`https://api.ynab.com/v1/budgets/${budgetId}/categories`, {
       method: 'GET',
       headers: {
@@ -49,8 +48,6 @@ export class YnabService {
           }
         })
       })
-
-      console.log(response);
     }
   }
 }

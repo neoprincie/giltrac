@@ -43,7 +43,7 @@ import { CurrencyPipe } from '@angular/common';
           </div>
           <div class="mt-2 p-2 bg-base-200 rounded-lg shadow">
             <h2 class="font-bold">YNAB Controls</h2>
-            <button class="btn btn-soft btn-primary w-full my-2">Assign to Current Month</button>
+            <!-- <button class="btn btn-soft btn-primary w-full my-2">Assign to Current Month</button> -->
             <button class="btn btn-soft btn-secondary w-full my-2" (click)="assignNextMonth()">Assign to Next Month</button>
           </div>
         </div>
@@ -135,6 +135,11 @@ export class Budget {
   }
 
   async assignNextMonth() {
-    await this.ynabService.assignCategories(this.budgetId, '2025-09-01', this.categories(), this.ynabAuth.token!);
+    const now = new Date();
+    const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1)
+      .toISOString()
+      .split('T')[0];
+      
+    await this.ynabService.assignCategories(this.budgetId, nextMonth, this.categories(), this.ynabAuth.token!);
   }
 }

@@ -8,7 +8,6 @@ export class YnabAuthService {
 
   get token(): string | null {
     const t = sessionStorage.getItem(this.tokenKey);
-    console.log("???" + t);
     const exp = Number(sessionStorage.getItem(this.expKey) || 0);
     return t && Date.now() < exp ? t : null;
   }
