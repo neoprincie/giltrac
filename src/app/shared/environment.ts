@@ -5,6 +5,6 @@ export const environment = {
   },
   ynab: {
     clientId: '9i59KkYxYIkLeN97lhKUj_J5LHDlZdGWvLjFd6uLgBQ',
-    redirect: 'http://localhost:4200/ynab'
+    redirect: 'https://giltrac.fly.dev/ynab'
   }
 };
