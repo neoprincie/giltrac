@@ -92,7 +92,9 @@ export class Budget {
     this.error.set(null);
     try {
       const data = await this.sheets.readBudgetTable(200, 'F');
+      console.log(data);
       const ynabData = await this.ynabService.getCategories(this.budgetId, this.ynabAuth.token!);
+      console.log(ynabData);
       
       let cats: Category[] = [];
       for(let row of data.slice(1)) {

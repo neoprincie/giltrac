@@ -79,6 +79,14 @@ import { RouterLink } from '@angular/router';
               </button>
             }
           </div>
+
+          <p class="text-base-content/70 mt-5">
+            Want to give it a try without connecting accounts yet?
+          </p>
+
+          <div class="w-full">
+            <a class="btn btn-soft btn-block" routerLink="/demo">Continue to Demo</a>
+          </div>
         </div>
       </div>
     </div>
